@@ -1,0 +1,13 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<a href="https://login.microsoftonline.com/common/oauth2/authorize?client_id=@ViewData["BootstrapAppId"]&redirect_uri=@ViewData["RedirectUrl"]&response_type=code&resource=@ViewData["BootstrapResourceUrl"]/">
+Sign in to Graph
+</a>
+
+<pre>
+    @ViewData["Output"]
+</pre>
