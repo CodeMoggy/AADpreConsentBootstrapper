@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Copyright (c) CodeMoggy. All rights reserved. Licensed under the MIT license.
+//See LICENSE in the project root for license information.
+
+using System;
 using System.Threading.Tasks;
 using Microsoft.Azure.ActiveDirectory.GraphClient;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
