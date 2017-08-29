@@ -12,7 +12,7 @@ This console application requires that the .NET Framework (tested with v4.5) and
     1. Under *Required Permissions* blade, add the *Sign in and read user profile* user permission from both the *Windows Azure Active Directory* and *Microsoft Graph* APIs, as well as the *Access directory as the sign-in user* permission from the *Windows Azure Active Directory* API.
     2. Under the *Reply URLs* blade, add the desired URL (if you plan to test locally, use `http://localhost:5000`).
 3. Copy the bootstrap application information (App ID and redirect URI) into the `Constants.cs`
-4. Configure the `List<OAuthGrant> grants` variable in `GraphRequests.cs` with one `OAuthGrant` entry for each of your solution's AAD applications that you will need the user to pre-consent to.
+4. Configure the `List<OAuthGrant> grants` variable in `Requests.cs` with one `OAuthGrant` entry for each of your solution's AAD applications that you will need the user to pre-consent to.
     * The documentation for the [AAD Graph](https://msdn.microsoft.com/en-us/library/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes) and the [MS Graph](https://developer.microsoft.com/en-us/graph/docs/concepts/permissions_reference) maintain a comprehensive reference of their permission scope names for delegated (user) permissions
     * Application permissions must be referenced by their GUIDs, which can be found by logging in to the [AAD Graph Explorer](https://graphexplorer.azurewebsites.net/) and executing the following queries:
         * AD Graph: `https://graph.windows.net/myorganization/servicePrincipals?$filter=appId eq '00000002-0000-0000-c000-000000000000'&api-version=1.6`

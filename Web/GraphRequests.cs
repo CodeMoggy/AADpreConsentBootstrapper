@@ -76,25 +76,18 @@ namespace GrantPreConsentWebApp
                 // You should add a new OAuthGrant per service principle (resource API) and application
                 List<OAuthGrant> grants = new List<OAuthGrant>() {
                     { new OAuthGrant{ Application = new Application {
-                        AppId = "d006b85d-06c4-4324-9b4a-3bedab31e762",
-                        DisplayName = "MyDelegateApp" },
-                        ResourceServicePrincipal = AADGraphPrincipal,
-                        DelegatedPermissions = "User.Read",
+                        AppId = "<Your AAD Application ID>",
+                        DisplayName = "<Your AAD Application Display Name>" },
+                        ResourceServicePrincipal = AADGraphPrincipal, // what API does your AAD Application use?
+                        DelegatedPermissions = "User.Read", // e.g. User.Read Mail.Send (separate with a space)
                         ApplicationPermissions = new List<string> { }
                     } },
                     { new OAuthGrant{ Application = new Application {
-                        AppId = "d006b85d-06c4-4324-9b4a-3bedab31e762",
-                        DisplayName = "MyDelegateApp" },
-                        ResourceServicePrincipal = MSFTGraphPrincipal,
-                        DelegatedPermissions = "Mail.Read",
-                        ApplicationPermissions = new List<string> { }
-                    } },
-                    { new OAuthGrant{ Application = new Application {
-                        AppId = "e92aedcf-9385-45db-85d2-b1c1529e9114",
-                        DisplayName = "Multiconsent App-Only Permission" },
-                        ResourceServicePrincipal = MSFTGraphPrincipal,
+                        AppId = "<Your AAD Application ID>",
+                        DisplayName = "<Your AAD Application Display Name>" },
+                        ResourceServicePrincipal = MSFTGraphPrincipal, // what API does your AAD Application use?
                         DelegatedPermissions = "",
-                        ApplicationPermissions = new List<string> { "741f803b-c850-494e-b5df-cde7c675a1ca" } // Read and write all users' full profiles
+                        ApplicationPermissions = new List<string> { "<Your permission scopes as Guids>" } //e.g. 741f803b-c850-494e-b5df-cde7c675a1ca = Read and write all users' full profiles
                     } }
                 };
 
